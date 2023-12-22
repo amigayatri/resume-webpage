@@ -1,42 +1,39 @@
 <script>
-	import Navbar from '../lib/layout/navbar.svelte';
-	import './fonts.css';
+	import Header from '../lib/layout/header.svelte';
+	import Footer from '$lib/layout/footer.svelte';
 </script>
 
-<Navbar />
+<Header />
 <slot />
+<Footer />
 
 <style global>
 	:global(body) {
 		margin: 0;
-		background-color: var(--color-white);
+		background-color: var(--color-background);
+		font-size: 16px;
 	}
 	:global(*) {
 		box-sizing: border-box;
-		font-family: Roboto;
+		font-family: 'Noto Sans', sans-serif;
 	}
 	:global(img) {
 		object-fit: contain;
 	}
 
 	:global(:root) {
-		--color-orange: #f49c24;
-		--color-orange-light: #f2bb6e;
-		--color-cream: #fffcee;
-		--color-white: #ffffff;
-		--color-blue: #087592;
-		--color-dark-blue: #043A49;
-		--color-primary: #266d84;
-		--color-primary-light: #b1d9e6;
-		--color-primary-dark: #0e2933;
-		--color-success: #19da43;
-		--color-error: #ff0404;
 		--color-background: #e5e5e5;
-		--color-red: #e8532f;
-
-		--shadow-big-button: -4px -4px 9px -4px rgba(255, 125, 0, 0.8),
-			4px 4px 9px -4px rgba(0, 21, 36, 0.8);
-		--shadow-big-button-hover: -11px -11px 20px -9px rgba(255, 125, 0, 0.8),
-			11px 11px 20px -9px rgba(0, 21, 36, 0.8);
+		--color-primary: #000000;
+		--container: 32px;
+	}
+	@media (min-width: 1024px) {
+		:global(:root) {
+			--container: 128px;
+		}
+	}
+	@media (min-width: 1600px) {
+		:global(:root) {
+			--container: calc((100% - 1000)/ 2);
+		}
 	}
 </style>

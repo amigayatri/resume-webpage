@@ -1,2 +1,15 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import Summary from "./summary.svelte";
+    import Section from "./section.svelte";
+    import {sections} from '../objects'
+</script>
+
+<Summary />
+{#each sections as section}
+    <Section content={section} />
+{/each}
+
+
+<style>
+
+</style>
